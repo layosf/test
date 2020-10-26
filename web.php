@@ -39,6 +39,7 @@ Route::prefix('master')->name('master.')->middleware(['auth', 'auth.admin'])->gr
     Route::post('/species/update/{id}', 'SpeciesController@update')->name('species.update');
     Route::get('/species/delete/{id}', 'SpeciesController@destroy')->name('species.delete');
 
+<<<<<<< HEAD
     //productionline
     Route::get('/productionline', 'ProductionlineController@index')->name('productionline');
     Route::get('/productionline/list', 'ProductionlineController@list')->name('productionline.list');
@@ -47,6 +48,8 @@ Route::prefix('master')->name('master.')->middleware(['auth', 'auth.admin'])->gr
     Route::post('/productionline/update/{id}', 'ProductionlineController@update')->name('productionline.update');
     Route::get('/productionline/delete/{id}', 'ProductionlineController@destroy')->name('productionline.delete');
 
+=======
+>>>>>>> origin/mel
     //buyer
     Route::get('/buyer', 'BuyerController@index')->name('buyer');
     Route::get('/buyer/list', 'BuyerController@list')->name('buyer.list');
@@ -60,6 +63,14 @@ Route::prefix('master')->name('master.')->middleware(['auth', 'auth.admin'])->gr
     
     //bankaccount
     Route::get('/bankaccount', 'BankAccountController@index')->name('bankaccount');
+<<<<<<< HEAD
+=======
+    Route::post('/bankaccount/store','BankAccountController@store')->name('bankaccount.store');
+    Route::get('/bankaccount/list', 'BankAccountController@list')->name('bankaccount.list');
+    Route::get('/bankaccount/delete/{id}', 'BankAccountController@delete');
+    Route::get('/bankaccount/edit/{id}', 'BankAccountController@edit')->name('bankaccount.edit');
+    Route::post('/bankaccount/update/{id}', 'BankAccountController@update')->name('bankaccount.update');
+>>>>>>> origin/mel
 
     //category
     Route::get('/category', 'CategoryController@list')->name('category');
@@ -78,4 +89,21 @@ Route::prefix('po')->name('po.')->group(function(){
     Route::get('/', 'POcontroller@index')->name('index');
     Route::get('/list', 'POcontroller@list')->name('list');
     Route::post('/store', 'POcontroller@general_store')->name('general.store');
+<<<<<<< HEAD
 });
+=======
+
+    Route::get('/delete/{id}', 'POcontroller@delete')->name('general.delete');
+    Route::get('/edit/general/{id}', 'POcontroller@editgeneral')->name('general.edit');
+    Route::post('/update/general/{id}', 'POcontroller@updategeneral')->name('general.update');
+
+    Route::post('/orderdetail/store', 'POcontroller@orderdetail_store')->name('orderdetail.store');
+    Route::get('/get_info/{id}', 'POcontroller@get_info');
+    Route::get('/get_infodate/{id}', 'POcontroller@get_infodate');
+});
+
+//Arrival Raw Material
+Route::prefix('rm')->name('rm.')->group(function(){
+    Route::get('/', 'RMcontroller@index')->name('index');
+});
+>>>>>>> origin/mel
